@@ -17,5 +17,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^admin/tools/', include('admin_tools.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^api/login/', include('rest_social_auth.urls_session')),
+    url(r'^api/login/', include('rest_social_auth.urls_token')),
 ]
